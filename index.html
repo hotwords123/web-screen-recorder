@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Web Screen Recorder</title>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+        #record-list {
+            width: fit-content;
+            min-width: 360px;
+        }
+        .record-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 24px;
+            font-size: 15px;
+            font-family: Arial;
+        }
+        .record-item:hover {
+            background-color: #f7f7f7;
+        }
+        .record-item > a {
+            margin: 3px;
+            color: #666;
+            text-decoration: none;
+        }
+        .record-item > a:hover {
+            color: #333;
+        }
+        .record-item-name {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <video id="video" controls></video>
+    </div>
+    <div>
+        <label for="s-cursor">Cursor:</label>
+        <select id="s-cursor">
+            <option value="always">always</option>
+            <option value="motion">motion</option>
+            <option value="never">never</option>
+        </select>
+        <input id="i-audio" type="checkbox">
+        <label for="i-audio">Audio</label>
+    </div>
+    <div>
+        <button id="btn-start">Start</button>
+        <button id="btn-stop" disabled>Stop</button>
+    </div>
+    <div id="record-list"></div>
+    <script type="text/javascript" src="record.js"></script>
+</body>
+</html>
